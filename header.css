@@ -1,0 +1,32 @@
+* {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    --bs-body-color: white;
+    --bs-body-bg: #2d2722;
+}
+.navbar-toggler{
+    border: none;
+}
+.container {
+    width: 100vw;
+    margin-top: 20px;
+}
+
+.container nav {
+    text-align: center;
+    justify-content: last baseline;
+}
+
+.container #navbarNav {
+    display: flex;
+    justify-content: flex-end;
+}
+.container #navbarNav a:hover{
+    color: white;
+}
+.container a {
+    color:#4c7031;
+}
