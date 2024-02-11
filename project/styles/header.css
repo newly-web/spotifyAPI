@@ -17,16 +17,22 @@ body{
 
 .container nav {
     text-align: center;
-    justify-content: last baseline;
 }
 
 .container #navbarNav {
-    display: flex;
+    /* display: flex; */
     justify-content: flex-end;
 }
-.container #navbarNav a:hover{
+.nav {
     color: white;
 }
-.container a {
-    color:#4c7031;
+.nav span{
+   color: #4c7031; 
+}
+
+ #navbarNav a:hover{
+    color: #4c7031;
+}
+#navbarNav a {
+    color: white;
 }

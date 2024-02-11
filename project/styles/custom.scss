@@ -1,0 +1,23 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.btn-secondary{
+   background-color: #3c7031;
+   border-color: #6c757d;
+   border: none;
+   width:150px;
+  
+}
+.btn{
+     border-radius: 0px;
+}
+.btn-secondary:hover{
+    color: #3c7031;
+    background-color: white;
+    border: none;
+}
+h1{
+    color: white;
+}
+body{
+    color: white;
+}

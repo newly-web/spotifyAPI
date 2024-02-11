@@ -1,0 +1,201 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #bc6124;
+  color: #e8e8e8;
+}
+
+.search-container {
+  margin: 0 1% 0 auto;
+  max-width: 100vw;
+  position: relative;
+}
+
+.search-container input[type="search"] {
+  background-color: white;
+  color: #2d2722;
+  display: block;
+  margin: 1% auto;
+  margin-left: 30%;
+  padding: 5px 25px;
+  min-width: 40%;
+  border-radius: 20px;
+  border: none;
+  box-shadow: -8px -8px 16px #161311,
+    8px 8px 16px #443b33;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.search-container input ::placeholder {
+  font-size: 11px;
+}
+
+.search-container input[type="search"]:focus {
+  box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.search-container button {
+  color: #2d2722;
+  width: 60px;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  height: 15px;
+  transform: translateY(-50%);
+  border: none;
+
+  line-height: 0.5;
+  border-radius: 10px;
+}
+
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=search]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.userInteraction h1 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-top: 45px;
+
+}
+
+main .results {
+  max-width: 1500px;
+  width: 90%;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+main .card {
+  color: white;
+  border: none;
+  max-width: 230px;
+  margin: 20px;
+}
+
+main .card .image {
+  max-width: 230px;
+  height: 230px;
+}
+
+main .card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+main .card h2 {
+  margin-top: 5%;
+  font-size: 15px;
+}
+
+main .card p {
+  font-size: 12px;
+}
+
+main .card a:hover {
+  color: #608b57;
+}
+
+.podcastDescription {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  height: 90px;
+  overflow: hidden;
+  text-align: justify;
+  margin-right: 6%;
+}
+
+@media (min-width: 300px) {
+  .search-container input[type="search"] {
+    margin: 0 auto;
+  }
+
+  .search-container button {
+    right: 15%;
+  }
+}
+
+@media (min-width: 360px) {
+  .search-container button {
+    right: 20%;
+  }
+}
+
+@media (min-width: 375px) {
+  .search-container button {
+    right: 22%;
+  }
+}
+
+@media (min-width: 425px) {
+  .search-container button {
+    right: 25%;
+  }
+}
+
+@media (min-width: 500px) {
+  .search-container button {
+    right: 30%;
+  }
+}
+
+@media (min-width: 575px) {
+  .search-container input[type="search"] {
+    max-width: 100%;
+  }
+
+  .search-container button {
+    right: 30%;
+  }
+}
+
+@media (min-width: 600px) {
+  .search-container button {
+    right: 30%;
+  }
+}
+
+@media (min-width: 620px) {
+  .search-container button {
+    right: 30%;
+  }
+}
+
+@media (min-width: 760px) {
+
+  .search-container button {
+    right: 32%;
+  }
+}

@@ -1,5 +1,5 @@
 <?php
-
+define("SITEURL","http://localhost:3000/");
 $servername = "localhost";
 $username = "root";
 $password = "";

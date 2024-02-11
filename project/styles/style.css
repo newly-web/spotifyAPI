@@ -181,7 +181,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  }
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
@@ -358,7 +359,8 @@ figure {
 
 img,
 svg {
-  vertical-align: middle; }
+  vertical-align: middle;
+  }
 
 table {
   caption-side: bottom;
@@ -590,7 +592,8 @@ progress {
 
 .img-fluid {
   max-width: 100%;
-  height: auto; }
+  height: 100%;
+  }
 
 .img-thumbnail {
   padding: 0.25rem;
@@ -631,7 +634,8 @@ progress {
     max-width: 540px; } }
 @media (min-width: 768px) {
   .container, .container-sm, .container-md {
-    max-width: 720px; } }
+    max-width: 720px;
+    } }
 @media (min-width: 992px) {
   .container, .container-sm, .container-md, .container-lg {
     max-width: 960px; } }
@@ -1054,7 +1058,8 @@ progress {
 
   .col-md-6 {
     flex: 0 0 auto;
-    width: 50%; }
+    /* width: 50%; */
+    }
 
   .col-md-7 {
     flex: 0 0 auto;
@@ -10301,7 +10306,61 @@ textarea.form-control-lg {
 
   .d-print-none {
     display: none !important; } }
-h1 .h1, .h1 .h1 {
-  font-weight: unset; }
+/*MY ADD ONS*/
+  *::-moz-selection { /* Code for Firefox */
+    color: whitesmoke;
+    background: #3c7031;
+  }
+  
+*::selection {
+      color: whitesmoke;
+    background: #35642b;
+  }
+.btn-secondary {
+  background-color: #3c7031;
+  border-color: #6c757d;
+  border: none;
+  width: 150px; }
 
+.btn {
+  border-radius: 0px; }
+
+.btn-secondary:hover {
+  color: #3c7031;
+  background-color: white;
+  border: none; }
+
+h1, .h1 {
+  color: white; }
+
+body {
+  color: white; }
+.card{
+    border-width: 0;}
+  a{
+      text-decoration: none;
+      color: white;
+    }
+h3.title {
+      font-size: 45px;
+  }
+.btn-contact-bg{
+    margin-top: 3%;
+    border-radius: 30px;
+    color: #fff;
+    padding: 15px 27px;
+    text-transform: capitalize;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    background-color: #3c7031;
+    font-family: 'poppins', sans-serif;
+    cursor: pointer;
+    width: 100%;
+}
+.btn-contact-bg:hover,
+ .btn-contact-bg:focus {
+    outline: 2px solid white;
+    color: white;
+}
 /*# sourceMappingURL=style.css.map */
