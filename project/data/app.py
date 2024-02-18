@@ -53,7 +53,7 @@ def search_for_podcasts(token, user_key_words):
     url = "https://api.spotify.com/v1/search"
     headers = get_auth_header(token)
 
-    general_key_words = ["black people", "black women", "black men", "black girl"]
+    general_key_words = ["black people","black women", "black men", "black girl"]
     combined_user_key_words =  f"{user_key_words.replace(' ', '+')}" if user_key_words else ""
    
     print("General key words:", general_key_words)
@@ -105,8 +105,7 @@ def search_for_podcasts(token, user_key_words):
 @app.route('/search', methods=['POST'])
 def search():
     try:
-        general_key_words = ["black people", "black women", "black men", "black girl"]
-
+        general_key_words = ["black people","black women", "black men", "black girl"]
         user_key_words = request.form.get('user_key_words', '')
         print("Received user keywords:", user_key_words)
         if not user_key_words:
