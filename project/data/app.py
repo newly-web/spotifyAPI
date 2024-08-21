@@ -1,4 +1,5 @@
 from dotenv import load_dotenv
+import sys
 import re
 import os
 import base64
@@ -13,12 +14,16 @@ connection = mysql.connector.connect(
     host="localhost",
     user="root",
     password="",
-    database="spotify api",
+    database="spotify_api",
 )
 print("Connected to the database.")
-
 cursor = connection.cursor()
-
+if len(sys.argv) > 1:
+        # Extract the command-line argument
+        user_input = sys.argv[1]
+        print("User input:", user_input)
+else:
+        print("No command-line argument provided.")
 
 load_dotenv()
 
@@ -44,8 +49,8 @@ def get_token():
 def get_auth_header(token):
     return {"Authorization": "Bearer " + token}
 
-def search_for_podcasts(token, user_key_words):
-    sql = "INSERT INTO podcasts (Title, Description, Image, URL, Audio, ID) VALUES (%s, %s,%s,%s,%s,%s)"
+def search_for_podcast(token, user_key_words):
+    sql = "INSERT INTO podcast (Title, Description, Image, URL, Audio, ID) VALUES (%s, %s,%s,%s,%s,%s)"
     if not user_key_words:
         print("Error: No search query provided.")
         return
@@ -85,11 +90,11 @@ def search_for_podcasts(token, user_key_words):
             print("Description:", description)
             print("Podcast URL:", podcast_url)
             print("Episode ID: ", episode_id)
-            print("Preview podcast: ", audio, )
+            print("Preview podcast: ", audio)
             # print("Next page: ", next_page)
             print("\n")  
             print("Inserting into the database...")
-            cursor.execute("SELECT * FROM podcasts WHERE ID = %s", (episode_id,))
+            cursor.execute("SELECT * FROM podcast WHERE ID = %s", (episode_id,))
             existing_record = cursor.fetchall()     
             print("Existing episodes: ", existing_record)
             connection.commit()
@@ -99,7 +104,7 @@ def search_for_podcasts(token, user_key_words):
                 connection.commit()
     else:
         print(f"!Error: {result.status_code} - {result.text}")
-
+search_for_podcast(get_token(), user_input)
 
 
 @app.route('/search', methods=['POST'])
@@ -117,7 +122,7 @@ def search():
         else:
             raw_input = re.split(r",\s?", user_key_words)
         token = get_token()
-        search_for_podcasts(token, user_key_words)
+        search_for_podcast(token, user_key_words)
 
         # Commit changes
         connection.commit()
@@ -137,12 +142,12 @@ def search():
 @app.route('/results')
 def results():
     user_key_words = request.args.get('user_key_words', '')
-    # Your logic for processing user_key_words and rendering the template
+    # logic for processing user_key_words and rendering the template
     return render_template('index.html', user_key_words=user_key_words)
 
 @app.route('/')
 def home():
     return "Welcome to the Flask API!"
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+
+   
